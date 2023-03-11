@@ -21,19 +21,19 @@
     - ha_enabled
     - groups['k3s_server'] | length is divisibleby 2
 
-- name: Check for a proper HA cluster virtual IP
-  fail:
-    msg: "When HA is enabled, 'ha_cluster_vip' must have a valid IP address."
-  when:
-    - ha_enabled
-    - (ha_cluster_vip is not defined) or not (ha_cluster_vip | ansible.netcommon.ipaddr)
-
 - name: Check for a proper HA cluster method
   fail:
     msg: "'{{ k3s_cluster_method }}' is not a supported HA cluster method."
   when:
     - ha_enabled
     - k3s_cluster_method not in k3s_cluster_methods
+
+- name: Check for a proper HA cluster virtual IP
+  fail:
+    msg: "When HA cluster method is kube-vip or keepalived, 'ha_cluster_vip' must have a valid IP address."
+  when:
+    - ha_enabled and k3s_cluster_method != 'external'
+    - (ha_cluster_vip is not defined) or not (ha_cluster_vip | ansible.utils.ipaddr)
 
 - name: Determine version to download
   block:

@@ -1,6 +1,6 @@
 ---
 
-# This file is used to configure the keepalived configuration files.  It typically does
+# This file is used to configure the Keepalived configuration files.  It typically does
 # not need to be changed but you can at your discretion to suit your environment.
 # These variables are used only when HA is enabled and the method chosen is keepalived.
 

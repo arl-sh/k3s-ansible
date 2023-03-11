@@ -21,7 +21,7 @@ Building on the
 I implemented the HA embedded database using *etcd* and three cluster VIP methods:
 1. **external**: uses an externally provided cluster VIP
 2. **kube-vip**: uses [kube-vip](https://kube-vip.io/) with arp arbitration
-3. **keepalived**: uses [keepalived](https://www.redhat.com/sysadmin/keepalived-basics) to implement VRRP
+3. **keepalived**: uses [Keepalived](https://www.redhat.com/sysadmin/keepalived-basics) to implement VRRP
 
 I have reached out to
 [itwars](https://github.com/itwars) and
@@ -35,7 +35,7 @@ Please, try it out.
 # TODO
 
 1. Make all roles *idempotent* and not report changes when none, in fact, are needed or material.
-2. Add *keepalived*' label to servers when using keepalived;  Add the following annotations:
+2. Add *keepalived*' label to servers when using Keepalived;  Add the following annotations:
     - `keepalived/vrrp_instance=<name>`
     - `keepalived/master=[true|false]`
     - `keepalived/version=<version>`

@@ -42,7 +42,7 @@ Here is what has been tested (:heavy_check_mark:) with *k3s-ansible*.
 
 - *k3s-ansible* will overwrite an existing *k3s* installation on the hosts.
 - *k3s-ansible* will overwrite the `.kube` directory of the `ansible_user` specified on each server.
-- An HA configuration using *keepalived* will overwrite an existing *keepalived* configuration.
+- An HA configuration using *Keepalived* will overwrite an existing *Keepalived* configuration.
 
 ## Usage
 
